@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Data</title>
+</head>
+<body style="background-color:black; ">
+	
+	<div style="background-color:black;">
+		<h1 style="text-align:center; color:white;">Student Data</h1>
+	</div>
+	
+	<div style="margin-top: 20px;" id="result"></div>
+
+	<div style="background-color:black; color:white;  position:fixed; left:0; bottom:0; width:100%;">
+		<h6 style="text-align:center;">made by @rohitkarki</h6>
+	</div>
+	
+</body>
+</html>
+
+<script src="js/jquery.js"></script>
+
+<script>
+	$("document").ready(function(){
+		
+			var id=$("#id").val();
+			$.post("ShowAll", {id:id}, function(data){
+				$("#result").html(data);
+			});
+		
+	});
+</script>
